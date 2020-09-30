@@ -36,7 +36,7 @@ public class MyRESTController {
 	@GetMapping("/contactsbyplace")
 	//@Query("select from Contact c where c.=:name)
 	public Iterable<Contact> getContactsByPlace(@RequestBody Place place) {
-		return repository.findAll();
+		return repository.findByPlaceIn(place);
 	}
 
 }
